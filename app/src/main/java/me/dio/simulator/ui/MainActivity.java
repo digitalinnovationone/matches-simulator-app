@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://digitalinnovationone.github.io/matches-simulator-api/")
+                .baseUrl("https://4llex.github.io/DIO-matches-simulator-api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                     Random random = new Random();
                     for (int i = 0; i < matchesAdapter.getItemCount(); i++) {
                         Match match = matchesAdapter.getMatches().get(i);
-                        match.getHomeTeam().setScore(random.nextInt(match.getHomeTeam().getStars() + 1));
-                        match.getAwayTeam().setScore(random.nextInt(match.getAwayTeam().getStars() + 1));
+                        match.getHost().setScore(random.nextInt(match.getHost().getStars() + 1));
+                        match.getVisitor().setScore(random.nextInt(match.getVisitor().getStars() + 1));
                         matchesAdapter.notifyItemChanged(i);
                     }
                 }

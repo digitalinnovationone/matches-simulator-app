@@ -11,7 +11,7 @@ data class Match(
     @SerializedName("local")
     val place: Place,
     @SerializedName("mandante")
-    val homeTeam: Team,
+    val host: Team,
     @SerializedName("visitante")
-    val awayTeam: Team
+    val visitor: Team
 ) : Parcelable
