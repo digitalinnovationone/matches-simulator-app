@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                     Random random = new Random();
                     for (int i = 0; i < matchesAdapter.getItemCount(); i++) {
                         Match match = matchesAdapter.getMatches().get(i);
-                        match.getHost().setScore(random.nextInt(match.getHost().getStars() + 1));
-                        match.getVisitor().setScore(random.nextInt(match.getVisitor().getStars() + 1));
+                        match.getHostTeam().setScore(random.nextInt(match.getHostTeam().getPower() + 1));
+                        match.getVisitorTeam().setScore(random.nextInt(match.getVisitorTeam().getPower() + 1));
                         matchesAdapter.notifyItemChanged(i);
                     }
                 }

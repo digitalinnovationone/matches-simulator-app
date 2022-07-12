@@ -42,15 +42,15 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
         Match match = matches.get(position);
 
         // Adapta os dados da partida (recuperada da API) para o nosso layout.
-        Glide.with(context).load(match.getHost().getImage()).circleCrop().into(holder.binding.ivHomeTeam);
-        holder.binding.tvHomeTeamName.setText(match.getHost().getName());
-        if (match.getHost().getScore() != null) {
-            holder.binding.tvHomeTeamScore.setText(String.valueOf(match.getHost().getScore()));
+        Glide.with(context).load(match.getHostTeam().getImage()).circleCrop().into(holder.binding.ivHomeTeam);
+        holder.binding.tvHomeTeamName.setText(match.getHostTeam().getName());
+        if (match.getHostTeam().getScore() != null) {
+            holder.binding.tvHomeTeamScore.setText(String.valueOf(match.getHostTeam().getScore()));
         }
-        Glide.with(context).load(match.getVisitor().getImage()).circleCrop().into(holder.binding.ivAwayTeam);
-        holder.binding.tvAwayTeamName.setText(match.getVisitor().getName());
-        if (match.getVisitor().getScore() != null) {
-            holder.binding.tvAwayTeamScore.setText(String.valueOf(match.getVisitor().getScore()));
+        Glide.with(context).load(match.getVisitorTeam().getImage()).circleCrop().into(holder.binding.ivAwayTeam);
+        holder.binding.tvAwayTeamName.setText(match.getVisitorTeam().getName());
+        if (match.getVisitorTeam().getScore() != null) {
+            holder.binding.tvAwayTeamScore.setText(String.valueOf(match.getVisitorTeam().getScore()));
         }
 
         holder.itemView.setOnClickListener(view -> {

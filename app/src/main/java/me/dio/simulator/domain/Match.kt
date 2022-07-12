@@ -9,9 +9,9 @@ data class Match(
     @SerializedName("descricao")
     val description: String,
     @SerializedName("local")
-    val place: Place,
+    val location: Place,
     @SerializedName("mandante")
-    val host: Team,
+    val hostTeam: Team,
     @SerializedName("visitante")
-    val visitor: Team
+    val visitorTeam: Team
 ) : Parcelable
